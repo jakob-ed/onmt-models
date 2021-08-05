@@ -3,8 +3,8 @@ source config.sh
 
 echo "Averaging checkpoints"
 ./../OpenNMT-py/tools/average_models.py -m \
-	openmt.model_step_49000.pt \
-	openmt.model_step_50000.pt \
+	openmt.model_step_400.pt \
+	openmt.model_step_500.pt \
 	-o averaged.pt
 # Debug:
 #cp openmt.model_step_50000.pt averaged.pt
@@ -30,4 +30,3 @@ cp MODEL_README.md packaged_model/README.md
 echo "Zip packaged model into Argos Translate model"
 mv packaged_model "${sl}_${tl}"
 zip -r "${sl}_${tl}.argosmodel" "${sl}_${tl}"
-
